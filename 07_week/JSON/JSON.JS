@@ -162,3 +162,4 @@ Log the updated object.
 */
 
 // Your code here
+console.log("Hello world");
