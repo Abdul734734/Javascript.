@@ -3,4 +3,5 @@ function calculateArea(width, height) {
 }
 
 // bad
-let discount = total * 0.2;
+
+console.log($(error.message));
