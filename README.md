@@ -1,33 +1,56 @@
-## Completed Tasks
+##Completed Tasks
+week_01
 
-- _week_01_
-  - [x] data_types
-  - [x] operators
-  - [x] variables
-- _week_02:_
-  - [x] basic_functions
-  - [x] numbers
-  - [x] strings
-  - [x] conditions
-- _week_03:_
-  - [x] github
-  - [x] loops
-  - [ ] 8_ball
-- _week_04:_
+data_types []
+operators []
+variables  []
 
-  - [] ATM_simulator
-  - [x] basic_DOM
-  - [x] pancake_maker
+week_02:
 
-- _week_06:_
+basic_functions []
+numbers []
+strings []
+conditions []
 
-  - [x] Little_Zoo
-  - [] Object_Exercise_1
-  - [] Object_Exercise_2
-  - [] Object_Exercise_3
+week_03:
 
-- _week_07:_
-  - [] Localstorage_Exercise
-  - [] JSON_exercise
-  - [] Pancake_03_exercise
-# Javascript.
+github []
+loops []
+8_ball []
+
+week_04:
+
+ATM_simulator []
+basic_DOM []
+pancake_maker []
+
+week_05:
+
+Array []
+Pancake_maker_2 []
+
+week_06:
+
+Little_Zoo
+Object_Exercise_1 []
+Object_Exercise_2 []
+Object_Exercise_3 []
+
+week_07:
+
+Localstorage_Exercise []
+JSON_exercise []
+Pancake_03_exercise []
+
+week_08:
+
+Error-handling []
+Fault-finding []
+Js-Writing-practices[]
+
+week_09:
+
+Async []
+Chaining []
+Destructuring []
+Spread-rest []

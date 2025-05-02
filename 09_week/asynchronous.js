@@ -8,7 +8,9 @@ After **2 seconds**, it should call `callback` with `"Hello, [name]!"`
 */
 
 function delayedGreet(name, callback) {
-  // Your code here
+  setTimeout(() => {
+    callback(`Hello, ${name}!`);
+  }, 2000);
 }
 
 // Test Case
@@ -24,7 +26,9 @@ It should **wait 3 seconds** before calling the callback with:
 */
 
 function processOrder(orderNumber, callback) {
-  // Your code here
+  setTimeout(() => {
+    callback(`Order ${orderNumber} is ready for pickup.`);
+  }, 3000);
 }
 
 // Test Case
@@ -40,7 +44,13 @@ If `validUser === false`, call the callback immediately with `"Invalid login"`
 */
 
 function loginUser(username, validUser, callback) {
-  // Your code here
+  if (validUser) {
+    setTimeout(() => {
+      callback(`Welcome, ${username}!`);
+    }, 1000);
+  } else {
+    callback("Invalid login");
+  }
 }
 
 // Test Cases
@@ -56,11 +66,18 @@ Convert `fetchUserData(shouldFail)` to return a Promise
 If `shouldFail === false`, **resolve after 2 seconds** with `"User data retrieved"`  
 If `shouldFail === true`, **reject after 2 seconds** with `"Error fetching user data"`  
 */
-
 function fetchUserData(shouldFail) {
-  // Your code here
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (shouldFail) {
+        resolve("User data retrieved");
+      } else {
+        reject("Error fetching user data");
+      }
+    }, 2000);
+  });
 }
-
+resolve("User data retrieved");
 // Test Cases
 fetchUserData(false).then(console.log).catch(console.error);
 // Expected: "User data retrieved" (after 2 sec)
@@ -76,10 +93,16 @@ Convert `processOrderPromise()` to return a promise chain:
    Wait **1 sec** → Resolve `"Order ready for pickup"`  
 */
 
-function processOrderPromise() {
-  // Your code here
-}
+async function processOrderAsync() {
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+  console.log("Order received");
 
+  await new Promise((resolve) => setTimeout(resolve, 3000));
+  console.log("Preparing order");
+
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+  console.log("Order ready for pickup");
+}
 // Test Case
 processOrderPromise().then(console.log);
 // Expected:
@@ -96,7 +119,11 @@ If `userExists === false`, **reject after 2 sec** with `"User not found"`
 */
 
 function getUserProfile(userExists) {
-  // Your code here
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      userExists ? resolve("User profile loaded") : reject("User not found");
+    }, 2000);
+  });
 }
 
 // Test Cases
@@ -114,7 +141,16 @@ If `shouldFail === true`, wait **2 sec** and throw `"Failed to fetch data"`
 */
 
 async function fetchUserDataAsync(shouldFail) {
-  // Your code here
+  try {
+    await new Promise((resolve, reject) => {
+      setTimeout(() => {
+        shouldFail ? reject("Failed to fetch data") : resolve();
+      }, 2000);
+    });
+    return "User data loaded";
+  } catch (error) {
+    throw new Error(error);
+  }
 }
 
 // Test Cases
@@ -133,9 +169,16 @@ Convert `checkoutCart()` to use `async/await`
 */
 
 async function checkoutCart() {
-  // Your code here
-}
+  // code here
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+  console.log("Checking stock...");
 
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+  console.log("Payment processed");
+
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+  console.log("Order completed!");
+}
 // Test Case
 checkoutCart().then(() => console.log("Thanks for shopping!"));
 // Expected:
@@ -154,7 +197,18 @@ Use **try/catch** to handle errors
 */
 
 async function fetchProductDetails(hasError) {
-  // Your code here
+  // code here
+  try {
+    await new Promise((resolve) => setTimeout(resolve, 3000));
+
+    if (hasError) {
+      throw "Error loading product";
+    }
+
+    return "Product details retrieved";
+  } catch (error) {
+    throw error;
+  }
 }
 
 // Test Cases

@@ -8,24 +8,15 @@ Call the function with scores like 85 and 75 and print the result.
 */
 function calculateGrade(score) {
   if (score >= 90) {
-    console.log("Grade A");
-  } else if (score >= 80 || score < 35) {
-    console.log("Grade B");
-  } else if (score >= 70 || score < 10) {
-    console.log("Grade C");
-  } else if (score >= 60 || score < 30) {
-    console.log("Grade D");
-  } else if (score >= 50 || score < 20) {
-    console.log("Grade E");
+    return "Grade A";
+  } else if (score >= 80 && score <= 89) {
+    return "Grade B";
   } else {
-    console.log("Grade F");
+    return "Grade C";
   }
 }
 
-calculateGrade(50);
-calculateGrade(90);
-calculateGrade(80);
-calculateGrade();
-
-function getLenght(string) {}
-getLenght("HELLO");
+calculateGrade(85);
+calculateGrade(75);
+console.log(calculateGrade(85));
+console.log(calculateGrade(75));

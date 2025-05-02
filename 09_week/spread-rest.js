@@ -7,7 +7,7 @@ Fix the function to correctly clone `fruits`.
 const fruits = ["apple", "banana", "orange"];
 
 // Fix this
-const newFruits = fruits;
+const newFruits = [...fruits];
 newFruits.push("grape");
 
 console.log(fruits); // Expected: ["apple", "banana", "orange"]
@@ -16,13 +16,13 @@ console.log(fruits); // Expected: ["apple", "banana", "orange"]
 Correctly merge the `oldTasks` and `newTasks` arrays.  
 */
 
-// const oldTasks = ["task1", "task2"];
-// const newTasks = ["task3", "task4"];
+const oldTasks = ["task1", "task2"];
+const newTasks = ["task3", "task4"];
 
 // // Fix this
-// const allTasks = [...oldTasks, ...newTasks];
+const allTasks = [...oldTasks, ...newTasks];
 
-// console.log(allTasks); // Expected: ["task1", "task2", "task3", "task4"]
+console.log(allTasks); // Expected: ["task1", "task2", "task3", "task4"]
 
 /* Task 3: Fix Object Merging
 Combine `defaultSettings` with `userSettings`.
@@ -32,15 +32,15 @@ const defaultSettings = { theme: "light", fontSize: 14 };
 const userSettings = { theme: "dark" };
 
 // Fix thiss...userSettings };
-
+const finalSettings = { ...defaultSettings, ...userSettings };
 console.log(finalSettings); // Expected: { theme: "dark", fontSize: 14 }
 
 /* Task 4: Fix Function with Rest Operator  
 Make the function work for any number of numbers.  
 */
 
-function sumNumbers(a, b) {
-  return a + b;
+function sumNumbers(...numbers) {
+  return numbers.reduce((a, b) => a + b, 0);
 }
 
 console.log(sumNumbers(2, 3, 4)); // Expected: 9
@@ -49,11 +49,11 @@ console.log(sumNumbers(2, 3, 4)); // Expected: 9
 Extract `title` and collect the remaining properties into `extraInfo`.  
 */
 
-// const book = { title: "JavaScript Guide", pages: 400, author: "John Doe" };
+const book = { title: "JavaScript Guide", pages: 400, author: "John Doe" };
 
 // // Fix this
-// const { title } = book;
-// console.log(title, extraInfo); // Expected: "JavaScript Guide", { pages: 400, author: "John Doe" }
+const { title, ...extraInfo } = book;
+console.log(title, extraInfo); // Expected: "JavaScript Guide", { pages: 400, author: "John Doe" }
 
 /* Task 6: Create Your Own
 Write a function that receives multiple numbers and returns their average using the rest operator.
@@ -61,3 +61,12 @@ Test with: `average(10, 20, 30, 40)`. Expected output: `25`.
 */
 
 // Write your code here
+function average(...numbers) {
+  if (numbers.length === 0) return 0;
+
+  const sum = numbers.reduce((acc, num) => acc + num, 0);
+  return sum / numbers.length;
+}
+
+// Test
+console.log(average(10, 20, 30, 40)); // Expected output: 25

@@ -20,8 +20,24 @@ const product = a * b;
 const quotient = a / b;
 const remainder = a % b;
 
-console.log("the sum of a and b: ", sum);
-console.log(difference);
-console.log(product);
-console.log(quotient);
-console.log(remainder);
+console.log("The sum of a and b is: " + sum);
+console.log("The difference when b is subtracted from a is: " + difference);
+console.log("The product of a and b is: " + product);
+console.log("The quotient when a is divided by b is: " + quotient);
+console.log("The remainder when a is divided by b is: " + remainder);
+
+a = 15;
+b = -3;
+
+sum = a + b;
+difference = a - b;
+product = a * b;
+quotient = a / b;
+remainder = a % b;
+
+console.log("\nAfter changing values:");
+console.log("The sum of a and b is: " + sum);
+console.log("The difference when b is subtracted from a is: " + difference);
+console.log("The product of a and b is: " + product);
+console.log("The quotient when a is divided by b is: " + quotient);
+console.log("The remainder when a is divided by b is: " + remainder);

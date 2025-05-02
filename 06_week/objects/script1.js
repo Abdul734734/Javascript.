@@ -22,5 +22,3 @@ Add at least two book objects to this collection.
 Access the `title` of the first book in the `library` collection and log it to the console.
 Modify the `yearPublished` for the second book in the collection to a new year, then log the updated book object to the console.
 */
-
-const library= 

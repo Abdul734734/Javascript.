@@ -10,13 +10,4 @@ const animalType = "Whiskers";
 
 let description = `the ${animalName} is named ${animalType}`;
 
-let name = "ali";
-if (name == "basit") {
-  console.log("finland");
-} else if (name == "majid") {
-  console.log("germany");
-} else if (name == "majid") {
-  console.log("pakistan");
-} else {
-  console.log("lahore");
-}
+console.log(description);

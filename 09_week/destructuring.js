@@ -52,8 +52,7 @@ getUserInfo({ name: "Alice" }); // Expected: "Alice - guest"
 // Fix the function so it correctly destructures `name` and `age`.
 // */
 
-function introduce(person) {
-  const { name, age } = person;
+function introduce({ name, age }) {
   console.log(`${name} is ${age} years old.`);
 }
 
@@ -65,3 +64,8 @@ Test with `{ brand: "Toyota", year: 2020 }`.
 */
 
 // Write your code here
+function carDetails({ brand, year }) {
+  console.log(`Brand: ${brand}, Year: ${year}`);
+}
+
+carDetails({ brand: "Toyota", year: 2020 });
