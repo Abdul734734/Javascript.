@@ -123,15 +123,15 @@ Write a function `filterHighRatedMovies(jsonString)` that:
 */
 
 // Your code here
-function filterHighRatedMovies(jsonString) {
-  try {
-    let movies = JSON.parse(jsonString); // Convert JSON string to array
-    return movies.filter((movie) => movie.rating > 8); // Keep movies with rating > 8
-  } catch (error) {
-    console.log("Invalid JSON!"); // Show error message
-    return []; // Return an empty array if JSON is bad
-  }
-}
+// function filterHighRatedMovies(jsonString) {
+//   try {
+//     let movies = JSON.parse(jsonString); // Convert JSON string to array
+//     return movies.filter((movie) => movie.rating > 8); // Keep movies with rating > 8
+//   } catch (error) {
+//     console.log("Invalid JSON!"); // Show error message
+//     return []; // Return an empty array if JSON is bad
+//   }
+// }
 
 /* Task 8
 Define an object named `shoppingCart` with:
